@@ -10,7 +10,7 @@ public class Extension {
             Where a number is a multiple of both five AND three (15, 30, etc) the array should contain the string "Fizzbuzz" instead of a number.
         * */
 
-       String[] array = new String[higher - lower];
+       String[] array = new String[1 + higher - lower];
 
         for (int i = 0; i < array.length; i++) {
             int number = i + lower;
@@ -25,8 +25,6 @@ public class Extension {
                 array[i] = Integer.toString(number);
             }
         }
-
-        System.out.println(Arrays.toString(array));
 
         return array;
     }
