@@ -20,7 +20,28 @@ public class Exercise {
         * */
 
 
-        
+
+        for(int i = 0; i < nums.length; i++) {
+           try {
+               int x = Integer.parseInt(nums[i]);
+
+               if((x % 3 == 0) && (x % 5 == 0)) {
+                   nums[i]  = "Fizzbuzz";
+               } else if(x % 3 == 0) {
+                   nums[i] =  "Fizz";
+               } else if(x % 5 == 0) {
+                   nums[i] = "Buzz";
+
+               }
+
+
+
+           } catch(NumberFormatException e){
+               return null;
+           }
+
+        }
+
         return nums;
     }
 }
