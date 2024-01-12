@@ -1,5 +1,7 @@
 package com.booleanuk.core;
 
+import java.util.Arrays;
+
 public class Exercise {
 
     // Since an array can only contain values of a single type, we're providing an array of strings for you to run logic on.
@@ -19,8 +21,30 @@ public class Exercise {
             Where a number is a multiple of both five AND three (15, 30, etc) the number in the array should be replaced the string "Fizzbuzz".
         * */
 
+        final int       DIGIT1  = 3;
+        final int       DIGIT2  = 5;
+        final String    WORD1   = "Fizz";
+        final String    WORD2   = "Buzz";
+        final String    SAME    = "Fizzbuzz";
 
-        
+        int[] intNums = new int[nums.length];
+        for(int i = 0; i < intNums.length; i++) {
+            intNums[i] = Integer.parseInt(nums[i]);
+        }
+        for(int i = 0; i < intNums.length; i++) {
+            if(intNums[i] % DIGIT1 == 0 && intNums[i] % DIGIT2 == 0) {
+                nums[i] = SAME;
+
+            }
+            if(intNums[i] % DIGIT1 == 0 && intNums[i] % DIGIT2 != 0) {
+                nums[i] = WORD1;
+
+            }
+            if(intNums[i] % DIGIT1 != 0 && intNums[i] % DIGIT2 == 0) {
+                nums[i] = WORD2;
+            }
+        }
         return nums;
     }
+
 }
