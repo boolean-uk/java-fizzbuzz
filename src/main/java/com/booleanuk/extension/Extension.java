@@ -7,19 +7,17 @@ public class Extension {
             Where a number is a multiple of five (5, 10, etc) the array should contain the string "Buzz" instead of a number.
             Where a number is a multiple of both five AND three (15, 30, etc) the array should contain the string "Fizzbuzz" instead of a number.
         * */
-        int length = higher - lower + 1;
-        String[] fin = new String[length];
+        String[] fin = new String[higher - lower + 1];
 
-        for (int i = 0; i < length; ++i) {
-            int num = Integer.parseInt(fin[i]);
-            if (num % 3 == 0 && num % 5 == 0) {
-                fin[i] = "Fizzbuzz";
-            } else if (num % 5 == 0) {
-                fin[i] = "Buzz";
-            } else if (num % 3 == 0) {
-                fin[i] = "Fizz";
+        for (int i = lower; i <= higher; ++i) {
+            if (i % 3 == 0 && i % 5 == 0) {
+                fin[i - lower] = "Fizzbuzz";
+            } else if (i % 5 == 0) {
+                fin[i - lower] = "Buzz";
+            } else if (i % 3 == 0) {
+                fin[i - lower] = "Fizz";
             } else {
-                fin[i] = Integer.toString(num);
+                fin[i - lower] = String.valueOf(i);
 
             }
         }
