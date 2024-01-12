@@ -27,10 +27,11 @@ public class Exercise {
                 nums[i] = "Buzz";
             } else if (num % 3 == 0) {
                 nums[i] = "Fizz";
-            }}
+            }
+        }
 
 
-        
+
         return nums;
     }
 }
