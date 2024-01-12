@@ -18,9 +18,19 @@ public class Exercise {
             Where a number is a multiple of five (5, 10, etc) the number in the array should be replaced the string "Buzz".
             Where a number is a multiple of both five AND three (15, 30, etc) the number in the array should be replaced the string "Fizzbuzz".
         * */
-
+        String[] fizzedBuzzed = new String[nums.length];
+        int i = 0;
+        for(String num : nums)
+        {
+            int toInt = Integer.parseInt(num);
+            if(toInt % 15 == 0) fizzedBuzzed[i] = "Fizzbuzz";
+            else if (toInt % 5 == 0) fizzedBuzzed[i] = "Buzz";
+            else if (toInt % 3 == 0) fizzedBuzzed[i] = "Fizz";
+            else fizzedBuzzed[i] = num;
+            i++;
+        }
 
         
-        return nums;
+        return fizzedBuzzed;
     }
 }
