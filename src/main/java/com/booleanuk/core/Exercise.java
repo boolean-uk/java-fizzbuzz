@@ -18,9 +18,23 @@ public class Exercise {
             Where a number is a multiple of five (5, 10, etc) the number in the array should be replaced the string "Buzz".
             Where a number is a multiple of both five AND three (15, 30, etc) the number in the array should be replaced the string "Fizzbuzz".
         * */
+        int[] r = new int[nums.length];
+        for (int i = 0; i < nums.length; i++) {
+            r[i] = Integer.parseInt(nums[i]);
+        }
 
-
-        
+        for (int i = 0; i < r.length; i++) {
+            if((r[i] % 3) == 0 && (r[i] % 5) == 0){
+                nums[i] = "Fizzbuzz";
+                break;
+            }
+            if((r[i] % 3) == 0){
+                nums[i] = "Fizz";
+            }
+            if((r[i] % 5) == 0){
+                nums[i] = "Buzz";
+            }
+        }
         return nums;
     }
 }
