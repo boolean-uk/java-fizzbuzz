@@ -1,7 +1,7 @@
 package com.booleanuk.core;
 
 public class Exercise {
-
+    String[] numsOne = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"};
     // Since an array can only contain values of a single type, we're providing an array of strings for you to run logic on.
     // You'll need to convert each string into a number to solve this exercise
     // For example, the tests will provide an input such as ["1", "2", "10", "15"] and will expect an output of ["1", "2", "Buzz", "Fizzbuzz"]
@@ -18,9 +18,22 @@ public class Exercise {
             Where a number is a multiple of five (5, 10, etc) the number in the array should be replaced the string "Buzz".
             Where a number is a multiple of both five AND three (15, 30, etc) the number in the array should be replaced the string "Fizzbuzz".
         * */
-
-
-        
+        for (int i = 0; i < nums.length; i++)
+        {
+            int num = Integer.parseInt(nums[i]);
+            if (num % 3 == 0 && num % 5 == 0)
+            {
+                nums[i] = "Fizzbuzz";
+            }
+            else if (num % 3 == 0)
+            {
+                nums[i] = "Fizz";
+            }
+            else if (num % 5 == 0)
+            {
+                nums[i] = "Buzz";
+            }
+        }
         return nums;
     }
 }
