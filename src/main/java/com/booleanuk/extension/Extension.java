@@ -8,8 +8,23 @@ public class Extension {
             Where a number is a multiple of both five AND three (15, 30, etc) the array should contain the string "Fizzbuzz" instead of a number.
         * */
 
+        String[] output = new String[higher-lower+1];
 
+        for (int i = 0; i < output.length; i++) {
+            int n = lower + i;
 
-        return null;
+            if (n % 3 == 0 && n % 5 == 0) {
+                output[i] = "Fizzbuzz";
+            } else if (n % 3 == 0) {
+                output[i] = "Fizz";
+            } else if (n % 5 == 0) {
+                output[i] = "Buzz";
+            } else {
+                output[i] = String.valueOf(n);
+            }
+
+        }
+
+        return output;
     }
 }
