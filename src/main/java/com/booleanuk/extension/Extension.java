@@ -8,8 +8,34 @@ public class Extension {
             Where a number is a multiple of both five AND three (15, 30, etc) the array should contain the string "Fizzbuzz" instead of a number.
         * */
 
+        int sum = higher - lower;
+
+        String[] list = new String[sum + 1];
+
+        for (int i = lower; i <= higher; i++) {
+
+            if (i % 3 == 0 && i % 5 == 0) {
+
+                list[i - lower] = "Fizzbuzz";
+
+            }
+            else if (i % 3 == 0 ) {
+
+                list[i - lower] = "Fizz";
+
+            }
+            else if (i % 5 == 0 ) {
+
+                list[i - lower] = "Buzz";
+
+            }
+            else {
+                list[i - lower] = Integer.toString(i);
+            }
 
 
-        return null;
+        }
+
+        return list;
     }
 }
