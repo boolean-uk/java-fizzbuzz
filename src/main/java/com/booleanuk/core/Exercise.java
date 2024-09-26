@@ -2,6 +2,9 @@ package com.booleanuk.core;
 
 public class Exercise {
 
+    private final int fizz = 3;
+    private final int buzz = 5;
+
     // Since an array can only contain values of a single type, we're providing an array of strings for you to run logic on.
     // You'll need to convert each string into a number to solve this exercise
     // For example, the tests will provide an input such as ["1", "2", "10", "15"] and will expect an output of ["1", "2", "Buzz", "Fizzbuzz"]
@@ -19,7 +22,20 @@ public class Exercise {
             Where a number is a multiple of both five AND three (15, 30, etc) the number in the array should be replaced the string "Fizzbuzz".
         * */
 
+        // I know this technically is not considered a number format exception...
+        // However, I just decided to have an exception thrown instead of returning a null value
+        if (nums == null) throw new NumberFormatException();
 
+        for (int i = 0; i < nums.length; i++) {
+            int _target = Integer.parseInt(nums[i]);
+
+            if (_target % (fizz * buzz) == 0)
+                nums[i] = "Fizzbuzz";
+            else if (_target % buzz == 0)
+                nums[i] = "Buzz";
+            else if (_target % fizz == 0)
+                nums[i] = "Fizz";
+        }
         
         return nums;
     }
