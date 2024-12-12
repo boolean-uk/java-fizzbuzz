@@ -9,7 +9,25 @@ public class Extension {
         * */
 
 
+        String[] lis = new String[higher-lower+1];
 
-        return null;
+        for (int n = 0; n < lis.length; n++) {
+            lis[n] = Integer.toString(n+lower);
+        }
+
+        for (int n = 0; n < lis.length; n++) {
+            if (Integer.parseInt(lis[n]) %3==0 && Integer.parseInt(lis[n]) %5==0){
+                lis[n] = "Fizzbuzz";
+            }
+            else if (Integer.parseInt(lis[n]) %3==0){
+                lis[n] = "Fizz";
+            }
+
+            else if (Integer.parseInt(lis[n]) %5==0){
+                lis[n] = "Buzz";
+            }
+        }
+
+        return lis;
     }
 }
